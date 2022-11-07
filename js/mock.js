@@ -14,6 +14,6 @@ const GetPhotoData = (id) => ({
   likes: getRandomPositiveInteger(CountLikes.MIN, CountLikes.MAX),
   comments: Array.from({ length: getRandomPositiveInteger(1, 6) }).map((value, index) => GetUserData(index + 1)),
 });
-const createPhotoArray = Array.from({ length: MaxCountPhotos }).map((value, index) => GetPhotoData(index + 1));
+const createPhotoArray = (lengthArray) => Array.from({ length: MaxCountPhotos }).map((value, index) => GetPhotoData(index + 1));
 const photos = createPhotoArray(MaxCountPhotos);
 export { photos }
