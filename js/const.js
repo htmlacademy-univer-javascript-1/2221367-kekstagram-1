@@ -30,4 +30,4 @@ const DISCRIPTION = [
   'Привет моя грусть, я теперь не боюсь.',
 ];
 
-export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos}
+export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos};
