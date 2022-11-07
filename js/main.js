@@ -1,3 +1,3 @@
-import { photos} from '_/const.js';
+import { containerPictures } from './renderingPhotos.js';
 
-photos();
+containerPictures();
