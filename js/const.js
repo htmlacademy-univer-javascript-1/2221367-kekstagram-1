@@ -1,8 +1,8 @@
 const MaxCountPhotos = 25;
 const COUNT_COMMETS = 5;
 const CountLikes = {
-    MIN: 15,
-    MAX: 200
+  MIN: 15,
+  MAX: 200
 };
 const NAMES = [
     'Анастасия',
