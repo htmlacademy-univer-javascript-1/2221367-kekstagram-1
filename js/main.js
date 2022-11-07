@@ -1,3 +1,3 @@
-import { containerPictures } from './renderingPhotos.js';
+import { containerPictures } from './thumbnail.js';
 
 containerPictures();
