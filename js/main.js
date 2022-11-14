@@ -1,3 +1,3 @@
-import { photos} from '_/const.js';
+import { photos} from './const.js';
 
 photos();
