@@ -1,3 +1,4 @@
-import { photos} from './const.js';
+import { addPictures } from './thumbnail.js';
 
-photos();
+addPictures();
+

@@ -36,4 +36,3 @@ const DISCRIPTION = [
 ];
 
 export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos, NumberAvatar};
-
