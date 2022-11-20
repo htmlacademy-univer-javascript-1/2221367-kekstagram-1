@@ -1,32 +1,24 @@
 
-import { getRandomPositiveInteger} from './utils.js';
-import {NAMES, MASSAGES, DISCRIPTION, COUNT_COMMETS, MaxCountPhotos, CountLikes, NumberAvatar } from './const.js';
+import { getRandomPositiveInteger } from './utils.js';
+import { NAMES, MESSAGES, DESCRIPTIONS, COUNT_PHOTO, COUNT_COMMENT, CountLike, NumberAvatar } from './consts.js';
 
-const createComments = (id) => ({
+const createComment = (id) => ({
   id,
   avatar: `img/avatar-${getRandomPositiveInteger(NumberAvatar.MIN, NumberAvatar.MAX)}.svg`,
-
-import { getRandomPositiveInteger} from '/utils.js';
-import { MASSAGES, DISCRIPTION, NAMES, MaxCountPhotos } from '/const.js';
-
-const GetUserData = (id) => ({
-  id,
-  avatar: `img/avatar-${getRandomPositiveInteger(1, MaxCountPhotos)}.svg`,
-
-  message: MASSAGES[getRandomPositiveInteger(0, MASSAGES.length - 1)],
-  name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)],
+  message: MESSAGES[getRandomPositiveInteger(0, MESSAGES.length - 1)],
+  name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)]
 });
 
-const getPhotoData = (id) => ({
+const createPhotoData = (id) => ({
   id,
   url: `photos/${id}.jpg`,
-  despription: DISCRIPTION[getRandomPositiveInteger(0, DISCRIPTION.length - 1)],
-  likes: getRandomPositiveInteger(CountLikes.MIN, CountLikes.MAX),
-  comments: Array.from({ length: getRandomPositiveInteger(1, COUNT_COMMETS) }).map((_, index) => getUserData(index + 1)),
+  description: DESCRIPTIONS[getRandomPositiveInteger(0, DESCRIPTIONS.length - 1)],
+  likes: getRandomPositiveInteger(CountLike.MIN, CountLike.MAX),
+  comments: Array.from({length: getRandomPositiveInteger(1, COUNT_COMMENT)}).map((_, index) => createComment(index + 1))
 });
 
-const createPhotos = () = Array.from({length: MaxCountPhotos}).map((_, index) => getPhotoData(index + 1));
+const createPhotoArray = (lengthArray) => Array.from({length: lengthArray}).map((_, index) => createPhotoData(index + 1));
 
-const photos = createPhotos();
+const photos = createPhotoArray(COUNT_PHOTO);
 
-export { photos };
+export {photos};
