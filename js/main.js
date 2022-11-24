@@ -1,3 +1,4 @@
-import { containerPictures } from './thumbnail.js';
+import { addPictures } from './thumbnail.js';
 
-containerPictures();
+addPictures();
+

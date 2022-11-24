@@ -1,9 +1,14 @@
 const MaxCountPhotos = 25;
-const COUNT_COMMETS = 5;
+const COUNT_COMMETS = 8;
 
 const CountLikes = {
   MIN: 15,
   MAX: 200
+};
+
+const NumberAvatar = {
+  MIN: 1,
+  MAX: 6
 };
 
 const NAMES = [
@@ -30,4 +35,4 @@ const DISCRIPTION = [
   'Привет моя грусть, я теперь не боюсь.',
 ];
 
-export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos};
+export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos, NumberAvatar};

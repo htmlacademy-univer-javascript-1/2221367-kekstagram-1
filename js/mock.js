@@ -1,22 +1,24 @@
-import { getRandomPositiveInteger} from '/utils.js';
-import { MASSAGES, DISCRIPTION, NAMES, MaxCountPhotos } from '/const.js';
 
-const GetUserData = (id) => ({
+import { getRandomPositiveInteger } from './utils.js';
+import { NAMES, MESSAGES, DESCRIPTIONS, COUNT_PHOTO, COUNT_COMMENT, CountLike, NumberAvatar } from './consts.js';
+
+const createComment = (id) => ({
   id,
-  avatar: `img/avatar-${getRandomPositiveInteger(1, MaxCountPhotos)}.svg`,
-  message: MASSAGES[getRandomPositiveInteger(0, MASSAGES.length - 1)],
-  name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)],
+  avatar: `img/avatar-${getRandomPositiveInteger(NumberAvatar.MIN, NumberAvatar.MAX)}.svg`,
+  message: MESSAGES[getRandomPositiveInteger(0, MESSAGES.length - 1)],
+  name: NAMES[getRandomPositiveInteger(0, NAMES.length - 1)]
 });
 
-const getPhotoData = (id) => ({
+const createPhotoData = (id) => ({
   id,
   url: `photos/${id}.jpg`,
-  despription: DISCRIPTION[getRandomPositiveInteger(0, DISCRIPTION.length - 1)],
-  likes: getRandomPositiveInteger(CountLikes.MIN, CountLikes.MAX),
-  comments: Array.from({ length: getRandomPositiveInteger(1, 6) }).map((value, index) => GetUserData(index + 1)),
+  description: DESCRIPTIONS[getRandomPositiveInteger(0, DESCRIPTIONS.length - 1)],
+  likes: getRandomPositiveInteger(CountLike.MIN, CountLike.MAX),
+  comments: Array.from({length: getRandomPositiveInteger(1, COUNT_COMMENT)}).map((_, index) => createComment(index + 1))
 });
 
-const createPhotoArray = (lengthArray) => Array.from({ length: MaxCountPhotos }).map((value, index) => GetPhotoData(index + 1));
-const photos = createPhotoArray(MaxCountPhotos);
+const createPhotoArray = (lengthArray) => Array.from({length: lengthArray}).map((_, index) => createPhotoData(index + 1));
 
-export { photos };
+const photos = createPhotoArray(COUNT_PHOTO);
+
+export {photos};
