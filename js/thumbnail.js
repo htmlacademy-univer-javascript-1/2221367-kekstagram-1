@@ -22,12 +22,17 @@ const onPictureClick = (evt) => {
   openPicture(photos[id - 1]);
 };
 
-const addPictures = () => {
-  renderThumbnails();
+const addPictures = (data) => {
+  renderThumbnails(data);
   const pictures = document.querySelectorAll('.js-picture');
-
   pictures.forEach((picture) => {
-    picture.addEventListener('click', onPictureClick);
+    picture.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      const target = evt.target;
+      const parent = target.closest('.js-picture');
+      const id = +parent.dataset.id;
+      openPicture(data[id - 1]);
+    });
   });
 };
 

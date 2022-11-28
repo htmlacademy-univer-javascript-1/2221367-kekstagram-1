@@ -4,6 +4,8 @@ const getRandomPositiveInteger = (a, b) => {
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
 };
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
 const checkStringLength = (string, length) => string.length <= length;
 checkStringLength();
 
