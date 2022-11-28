@@ -8,7 +8,7 @@ const getPictureTemplate = ({id, url, comments, likes}) => `<a href="#" class="p
 </p>
 </a>`;
 
-const renderThumbnails = () => {
+const renderThumbnails = (data) => {
   const containerPictures = document.querySelector('.js-pictures');
   containerPictures.insertAdjacentHTML('beforeend',data.map((photo)=> getPictureTemplate(photo)).join(''));
 };
