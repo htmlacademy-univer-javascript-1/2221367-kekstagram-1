@@ -46,6 +46,6 @@ const ErrorMessage = {
   MAX_COUNT_HASHTAG: `Нельзя указать больше ${MAX_HASHTAG_COUNT} хэш-тегов`,
   UNACCEPTABLE_SYMBOLS: 'Хэш-тег содержит недопустимые символы',
   COMMENT_MAX_LENGTH: `Максимальная длина комментария ${MAX_STRING_LENGTH} символов`
-};  
+};
 
 export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos, NumberAvatar, ErrorMessage, MAX_HASHTAG_COUNT, MAX_HASHTAG_LENGTH, MAX_STRING_LENGTH};
