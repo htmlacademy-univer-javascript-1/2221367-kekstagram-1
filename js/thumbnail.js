@@ -10,7 +10,7 @@ const getPictureTemplate = ({id, url, comments, likes}) => `<a href="#" class="p
 
 const renderThumbnails = () => {
   const containerPictures = document.querySelector('.js-pictures');
-  containerPictures.insertAdjacentHTML('beforeend',photos.map((photo)=> getPictureTemplate(photo)).join(''));
+  containerPictures.insertAdjacentHTML('beforeend',data.map((photo)=> getPictureTemplate(photo)).join(''));
 };
 
 const addPictures = (data) => {
