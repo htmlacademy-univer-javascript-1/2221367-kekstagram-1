@@ -20,19 +20,19 @@ const pristine = new Pristine(form, {
 const closeUploadPopup  = () => {
   editImg.classList.add('hidden');
   body.classList.remove('modal-open');
-  closeButton.removeEventListener('click', onCloseButtonClick);
-  document.removeEventListener('keydown',onButtonEscKeydown);
   form.reset();
 };
 
 const onButtonEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     closeUploadPopup();
+    document.removeEventListener('keydown', onButtonEscKeydown);
   }
 };
 
 const onCloseButtonClick = () => {
   closeUploadPopup();
+  document.removeEventListener('keydown', onButtonEscKeydown);
 };
 
 const addFieldListeners = (field) => {
