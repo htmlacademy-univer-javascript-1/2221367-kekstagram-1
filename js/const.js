@@ -1,5 +1,8 @@
 const MaxCountPhotos = 25;
 const COUNT_COMMETS = 8;
+const MAX_STRING_LENGTH = 140;
+const MAX_HASHTAG_COUNT = 5;
+const MAX_HASHTAG_LENGTH = 20;
 
 const CountLikes = {
   MIN: 15,
@@ -35,4 +38,14 @@ const DISCRIPTION = [
   'Привет моя грусть, я теперь не боюсь.',
 ];
 
-export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos, NumberAvatar};
+const ErrorMessage = {
+  SEPARETED_BY_SPASES: 'Хэш-теги должны разделяться пробелами',
+  START_WITH: 'Хэш-тег должен начинаться с символа #',
+  NO_REPEAT: 'Хэш-теги не должны повторяться',
+  HASHTAG_MAX_LENTH: `Максимальная длина одного хэш-тега ${MAX_HASHTAG_LENGTH} символов, включая #`,
+  MAX_COUNT_HASHTAG: `Нельзя указать больше ${MAX_HASHTAG_COUNT} хэш-тегов`,
+  UNACCEPTABLE_SYMBOLS: 'Хэш-тег содержит недопустимые символы',
+  COMMENT_MAX_LENGTH: `Максимальная длина комментария ${MAX_STRING_LENGTH} символов`
+};
+
+export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos, NumberAvatar, ErrorMessage, MAX_HASHTAG_COUNT, MAX_HASHTAG_LENGTH, MAX_STRING_LENGTH};

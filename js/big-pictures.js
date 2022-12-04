@@ -1,3 +1,6 @@
+import { isEscapeKey } from './utils.js';
+
+const body = document.querySelector('body');
 const bigPicture = document.querySelector('.big-picture');
 const closeButton = document.querySelector('.big-picture__cancel');
 
@@ -32,20 +35,21 @@ const renderBigPicture = (picture) => {
   getCommentsList(picture.comments);
 };
 
-const onPictureEscKeyDown = (evt) => {
-  if(evt.key === 'Escape') {
-    document.body.classList.remove('modal-open');
-    bigPicture.classList.add('hidden');
-    document.removeEventListener('keydown', onPictureEscKeyDown);
+const closePicture = () => {
+  body.classList.remove('modal-open');
+  bigPicture.classList.add('hidden');
+};
+
+const onDocumentEscKeyDown = (evt) => {
+  if(isEscapeKey(evt)) {
+    closePicture();
+    document.removeEventListener('keydown', onDocumentEscKeyDown);
   }
 };
 
-const closePicture = () => {
-  document.body.classList.remove('modal-open');
-  bigPicture.classList.add('hidden');
-
-  closeButton.removeEventListener('click', closePicture);
-  document.removeEventListener('keydown', onPictureEscKeyDown);
+const onCloseButtonClick = () => {
+  closePicture();
+  document.removeEventListener('keydown', onDocumentEscKeyDown);
 };
 
 const openPicture = (element) => {
@@ -54,8 +58,8 @@ const openPicture = (element) => {
 
   renderBigPicture(element);
 
-  closeButton.addEventListener('click', closePicture);
-  document.addEventListener('keydown', onPictureEscKeyDown);
+  closeButton.addEventListener('click', onCloseButtonClick);
+  document.addEventListener('keydown', onDocumentEscKeyDown);
 };
 
-export {openPicture};
+export { openPicture };
