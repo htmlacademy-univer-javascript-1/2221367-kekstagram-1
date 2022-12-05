@@ -14,7 +14,7 @@ const createPhotoData = (id) => ({
   url: `photos/${id}.jpg`,
   description: DESCRIPTIONS[getRandomPositiveInteger(0, DESCRIPTIONS.length - 1)],
   likes: getRandomPositiveInteger(CountLike.MIN, CountLike.MAX),
-  comments: Array.from({length: getRandomPositiveInteger(1, COUNT_COMMENT)}).map((_, index) => createComment(index + 1))
+  comments: Array.from({length: getRandomPositiveInteger(0, COUNT_COMMENT)}).map((_, index) => createComment(index + 1))
 });
 
 const createPhotoArray = (lengthArray) => Array.from({length: lengthArray}).map((_, index) => createPhotoData(index + 1));

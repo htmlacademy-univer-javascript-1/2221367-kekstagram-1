@@ -3,6 +3,7 @@ const COUNT_COMMETS = 8;
 const MAX_STRING_LENGTH = 140;
 const MAX_HASHTAG_COUNT = 5;
 const MAX_HASHTAG_LENGTH = 20;
+const SHOWN_COMMENT_COUNT = 5;
 
 const CountLikes = {
   MIN: 15,
@@ -48,4 +49,4 @@ const ErrorMessage = {
   COMMENT_MAX_LENGTH: `Максимальная длина комментария ${MAX_STRING_LENGTH} символов`
 };
 
-export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos, NumberAvatar, ErrorMessage, MAX_HASHTAG_COUNT, MAX_HASHTAG_LENGTH, MAX_STRING_LENGTH};
+export {DISCRIPTION, MASSAGES, NAMES, CountLikes, COUNT_COMMETS, MaxCountPhotos, NumberAvatar, ErrorMessage, MAX_HASHTAG_COUNT, MAX_HASHTAG_LENGTH, MAX_STRING_LENGTH, SHOWN_COMMENT_COUNT };
