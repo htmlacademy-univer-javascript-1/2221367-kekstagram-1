@@ -10,7 +10,7 @@ const getPictureTemplate = ({id, url, comments, likes}) => `<a href="#" class="p
 
 const renderThumbnails = (data) => {
   const containerPictures = document.querySelector('.js-pictures');
-  containerPictures.insertAdjacentHTML('beforeend',data.map((photo)=> getPictureTemplate(photo)).join(''));
+  containerPictures.insertAdjacentHTML('beforeend',data.map((photo) => getPictureTemplate(photo)).join(''));
 };
 
 const addPictures = (data) => {
@@ -22,7 +22,8 @@ const addPictures = (data) => {
       const target = evt.target;
       const parent = target.closest('.js-picture');
       const id = +parent.dataset.id;
-      openPicture(data[id - 1]);
+      const [ photo ] = data.filter((item) => item.id === id);
+      openPicture(photo);
     });
   });
 };
