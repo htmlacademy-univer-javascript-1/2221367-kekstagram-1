@@ -1,5 +1,5 @@
 import { isEscapeKey } from './utils.js';
-import { SHOWN_COMMENT_COUNT } from './const.js';
+import { SHOWN_COMMENT_COUNT } from './consts.js';
 
 const body = document.querySelector('body');
 const bigPicture = document.querySelector('.big-picture');
