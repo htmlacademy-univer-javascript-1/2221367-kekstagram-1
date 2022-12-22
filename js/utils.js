@@ -1,4 +1,4 @@
-import { TIMEOUT_DELAY } from './consts.js';
+import { TIMEOUT_DELAY } from './const.js';
 
 const getRandomPositiveInteger = (a, b) => {
   const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));

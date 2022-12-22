@@ -9,7 +9,7 @@ const ErrorMessage = {
   SEPARATED_BY_SPACES: 'Хэш-теги должны разделяться пробелами',
   START_WITH: 'Хэш-тег должен начинаться с символа #',
   NO_REPEAT: 'Хэш-теги не должны повторяться',
-  HASHTAG_MAX_LENTH: `Максимальная длина одного хэш-тега ${MAX_HASHTAG_LENGTH} символов, включая #`,
+  HASHTAG_MAX_LENGTH: `Максимальная длина одного хэш-тега ${MAX_HASHTAG_LENGTH} символов, включая #`,
   MAX_COUNT_HASHTAG: `Нельзя указать больше ${MAX_HASHTAG_COUNT} хэш-тегов`,
   UNACCEPTABLE_SYMBOLS: 'Хэш-тег содержит недопустимые символы',
   COMMENT_MAX_LENGTH: `Максимальная длина комментария ${MAX_STRING_LENGTH} символов`
