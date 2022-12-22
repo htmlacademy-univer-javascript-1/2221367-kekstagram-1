@@ -1,6 +1,5 @@
-
 import { getRandomPositiveInteger } from './utils.js';
-import { NAMES, MESSAGES, DESCRIPTIONS, COUNT_PHOTO, COUNT_COMMENT, CountLike, NumberAvatar } from './consts.js';
+import { NAMES, MESSAGES, DESCRIPTIONS, COUNT_PHOTO, COUNT_COMMENT, CountLike, NumberAvatar } from './const.js';
 
 const createComment = (id) => ({
   id,

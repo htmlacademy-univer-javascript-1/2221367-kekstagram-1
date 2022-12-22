@@ -1,12 +1,11 @@
-import { imgPreview } from './form.js';
+import { imgPreview } from './user-photo.js';
 
 const slider = document.querySelector('.effect-level__slider');
 const sliderWrapper = document.querySelector('.effect-level');
 const effectValue = document.querySelector('.effect-level__value');
 const effectList = document.querySelector('.effects__list');
 
-
-const Effects = {
+const Effect = {
   none: {
     filter: 'none',
     unit: '',
@@ -81,7 +80,27 @@ const Effects = {
   }
 };
 
-const initEffects = () => {
+const onEffectListChange = (evt) => {
+  const evtHandler = evt.target.value;
+  if (evtHandler === Effect.none.filter) {
+    sliderWrapper.classList.add('hidden');
+    imgPreview.style.filter = Effect[evtHandler].filter;
+    imgPreview.removeAttribute('class');
+  }
+
+  else {
+    sliderWrapper.classList.remove('hidden');
+    imgPreview.removeAttribute('class');
+    imgPreview.classList.add(`effects__preview--${evtHandler}`);
+    slider.noUiSlider.updateOptions(Effect[evtHandler].options);
+    slider.noUiSlider.on('update', () => {
+      effectValue.value = slider.noUiSlider.get();
+      imgPreview.style.filter = `${Effect[evtHandler].filter}(${effectValue.value}${Effect[evtHandler].units})`;
+    });
+  }
+};
+
+const createSlider = () => {
   noUiSlider.create(slider, {
     range: {
       min: 0,
@@ -102,24 +121,12 @@ const initEffects = () => {
   });
 };
 
-const onFilterButtonChange = (evt) => {
-  const evtHandler = evt.target.value;
-  if (evtHandler === 'none') {
-    sliderWrapper.classList.add('hidden');
-    imgPreview.style.filter = Effects[evtHandler].filter;
-    imgPreview.removeAttribute('class');
-  }
-
-  else {
-    sliderWrapper.classList.remove('hidden');
-    imgPreview.removeAttribute('class');
-    imgPreview.classList.add(`effects__preview--${evtHandler}`);
-    slider.noUiSlider.updateOptions(Effects[evtHandler].options);
-    slider.noUiSlider.on('update', () => {
-      effectValue.value = slider.noUiSlider.get();
-      imgPreview.style.filter = `${Effects[evtHandler].filter}(${effectValue.value}${Effects[evtHandler].units})`;
-    });
-  }
+const initEffects = () => {
+  effectList.addEventListener('change', onEffectListChange);
 };
 
-export { onFilterButtonChange, initEffects, effectList, sliderWrapper };
+const removeEffects = () => {
+  effectList.removeEventListener('change', onEffectListChange);
+};
+
+export { initEffects, removeEffects, sliderWrapper, createSlider };
